@@ -33,18 +33,24 @@ public class WebUI {
     driver.findElement(By.xpath(xpath)).click();
     }
 
-    public static void clickElement(By by){
-        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        driver.findElement(by).click();
-    }
-    public static void setText(String xpath){
+    public static void clickElement(String xpath, int timeout){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
         driver.findElement(By.xpath(xpath)).click();
     }
 
-    public static void setText(By by){
+    public static void clickElement(By by){
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-        driver.findElement(by);
+        driver.findElement(by).click();
+    }
+    public static void setText(String xpath, String value){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(xpath)));
+        driver.findElement(By.xpath(xpath)).sendKeys(value);
+    }
+
+    public static void setText(By by, String value){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+        driver.findElement(by).sendKeys(value);
     }
 
 }

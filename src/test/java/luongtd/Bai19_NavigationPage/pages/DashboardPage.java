@@ -34,12 +34,20 @@ public class DashboardPage {
 
     }
 
-    public void logOut(){
+    public void clickOptionProfile(){
+        WebUI.clickElement(dropDownProfile);
+        WebUI.sleep(1);
+        WebUI.clickElement(optionProfile);
+    }
+
+    public LoginPage logOut(){
         WebUI.clickElement(dropDownProfile);
         System.out.println("click on dropdown Profile");
 
         WebUI.sleep(1);
         WebUI.clickElement(optionLogout);
         System.out.println("click on option Logout");
+
+        return new LoginPage(driver);
     }
 }

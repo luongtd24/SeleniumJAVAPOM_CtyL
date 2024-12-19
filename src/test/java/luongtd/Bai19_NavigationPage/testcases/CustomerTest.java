@@ -4,6 +4,7 @@ import luongtd.Bai19_NavigationPage.pages.CustomerPage;
 import luongtd.Bai19_NavigationPage.pages.DashboardPage;
 import luongtd.Bai19_NavigationPage.pages.LoginPage;
 import luongtd.common.BaseTest;
+import luongtd.constant.ConfigurationLogin;
 import org.testng.annotations.Test;
 
 public class CustomerTest extends BaseTest {
@@ -12,11 +13,15 @@ public class CustomerTest extends BaseTest {
     DashboardPage dashboardPage;
     CustomerPage customerPage;
 
-//    @Test
-//    private void addNewCuscomerSucces(){
-//        loginPage = new LoginPage(driver);
-//        dashboardPage = loginPage.loginCRM("admin@example.com", "123456");
-//        dashboardPage.clickMenuCustomers();
-//        customerPage.moveCustomerSucces();
-//    }
+    @Test
+    public void addNewCuscomerSucces(){
+        loginPage = new LoginPage(driver);
+        dashboardPage = loginPage.loginCRM(ConfigurationLogin.email, ConfigurationLogin.password);
+        loginPage.verifyLoginSuccess();
+        customerPage= dashboardPage.clickMenuCustomers();
+        customerPage.verifyRedirectCustomerPageSuccess();
+        customerPage.clickButtonAddNewCustomer();
+
+        customerPage.inputDateCustomer("Company A");
+    }
 }

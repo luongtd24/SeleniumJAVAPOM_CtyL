@@ -26,12 +26,23 @@ public class DashboardTest extends BaseTest {
     }
 
     @Test
+    private void ClickProfile() {
+        loginPage = new LoginPage(driver);
+        dashboardPage = loginPage.loginCRM("admin@example.com","123456");
+        loginPage.verifyLoginSuccess();
+
+        dashboardPage.clickOptionProfile();
+
+    }
+
+    @Test
     private void logOut(){
         loginPage = new LoginPage(driver);
         dashboardPage = loginPage.loginCRM("admin@example.com","123456");
         loginPage.verifyLoginSuccess();
 
-        dashboardPage.logOut();
+        loginPage = dashboardPage.logOut();
+        loginPage.verifyRedirectLoginPage();
     }
 
 

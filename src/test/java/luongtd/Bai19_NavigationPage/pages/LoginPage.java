@@ -66,4 +66,10 @@ public class LoginPage {
         Assert.assertEquals(driver.findElement(errorMessage).getText(),"Invalid email or password", "Error Message not Displayed");
     }
 
+    public void verifyRedirectLoginPage(){
+        System.out.println("Verify redirect to Login Page");
+        Assert.assertTrue(driver.findElement(headerLoginPage).isDisplayed(),"Header of login page not Displayed");
+        Assert.assertEquals(driver.findElement(headerLoginPage).getText(),"Login", "Content of header Login page not match");
+    }
+
 }
