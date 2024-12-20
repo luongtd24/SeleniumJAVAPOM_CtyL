@@ -65,7 +65,11 @@ public class CustomerPage extends BaseTest {
         sleep(1);
         driver.findElement(inputSearchGroups).sendKeys(Keys.ENTER);
         WebUI.clickElement(dropdownGroups);
-        WebUI.setText(inputAddress, "HaNoi");
+        WebUI.setText(inputAddress, "Me Linh");
+        WebUI.setText(inputCity, "Ha Noi");
+        WebUI.setText(inputState,"Manchester");
+        WebUI.setText(inputZipCode,"254862");
+        WebUI.clickElement(buttonSaveCustomer);
 
 
     }

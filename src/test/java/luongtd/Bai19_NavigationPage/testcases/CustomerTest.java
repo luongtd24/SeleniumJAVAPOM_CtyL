@@ -21,7 +21,13 @@ public class CustomerTest extends BaseTest {
         customerPage= dashboardPage.clickMenuCustomers();
         customerPage.verifyRedirectCustomerPageSuccess();
         customerPage.clickButtonAddNewCustomer();
+        customerPage.inputDateCustomer("LTD");
 
-        customerPage.inputDateCustomer("Company A");
+    }
+    @Test
+    public void searchAndClickCompanyName(){
+        loginPage = new LoginPage(driver);
+        dashboardPage = loginPage.loginCRM(ConfigurationLogin.email, ConfigurationLogin.password);
+        loginPage.ve
     }
 }
