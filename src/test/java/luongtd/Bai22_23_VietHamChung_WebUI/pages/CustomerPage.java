@@ -1,4 +1,4 @@
-package luongtd.Bai19_NavigationPage.pages;
+package luongtd.Bai22_23_VietHamChung_WebUI.pages;
 
 import luongtd.WebUI;
 import luongtd.common.BaseTest;
@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class CustomerPage extends BaseTest {
 

@@ -1,4 +1,4 @@
-package luongtd.Bai19_NavigationPage.pages;
+package luongtd.Bai22_23_VietHamChung_WebUI.pages;
 
 import luongtd.WebUI;
 import luongtd.locator.LocatorCRM;
@@ -24,6 +24,7 @@ public class LoginPage {
     public LoginPage (WebDriver driver){
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        new WebUI(driver);
     }
 
     //Khai bao tat ca object (element) tren page nay
@@ -38,20 +39,24 @@ public class LoginPage {
     //Xay dung cac ham xu ly tren chinh Page nay
     private void setInputEmail(String email){
         wait.until(ExpectedConditions.visibilityOfElementLocated(inputEmail));
-        driver.findElement(inputEmail).sendKeys(email);
+        //driver.findElement(inputEmail).sendKeys(email);
+        WebUI.setText(inputEmail,email);
     }
 
     private void setInputPassword(String password){
         wait.until(ExpectedConditions.visibilityOfElementLocated(inputPassword));
-        driver.findElement(inputPassword).sendKeys(password);
+        //driver.findElement(inputPassword).sendKeys(password);
+        WebUI.setText(inputPassword,password);
     }
     private void clickButtonLogin(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(buttonLogin));
-        driver.findElement(buttonLogin).click();
+        //driver.findElement(buttonLogin).click();
+        WebUI.clickElement(buttonLogin);
     }
 
     public DashboardPage loginCRM(String email, String password){
-        driver.get(url);
+       // driver.get(url);
+        WebUI.openURL(url);
         setInputEmail(email);
         setInputPassword(password);
         clickButtonLogin();

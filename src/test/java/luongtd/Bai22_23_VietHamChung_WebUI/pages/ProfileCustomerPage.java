@@ -1,4 +1,4 @@
-package luongtd.Bai19_NavigationPage.pages;
+package luongtd.Bai22_23_VietHamChung_WebUI.pages;
 
 import luongtd.WebUI;
 import luongtd.common.BaseTest;

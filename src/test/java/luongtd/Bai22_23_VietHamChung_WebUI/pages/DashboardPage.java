@@ -1,9 +1,8 @@
-package luongtd.Bai19_NavigationPage.pages;
+package luongtd.Bai22_23_VietHamChung_WebUI.pages;
 
 import luongtd.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
 
 public class DashboardPage {
 

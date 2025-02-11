@@ -1,9 +1,8 @@
-package luongtd.Bai19_NavigationPage.testcases;
+package luongtd.Bai22_23_VietHamChung_WebUI.testcases;
 
-import luongtd.Bai19_NavigationPage.pages.CustomerPage;
-import luongtd.Bai19_NavigationPage.pages.DashboardPage;
-import luongtd.Bai19_NavigationPage.pages.LoginPage;
-import luongtd.Bai19_NavigationPage.pages.ProfileCustomerPage;
+import luongtd.Bai22_23_VietHamChung_WebUI.pages.CustomerPage;
+import luongtd.Bai22_23_VietHamChung_WebUI.pages.DashboardPage;
+import luongtd.Bai22_23_VietHamChung_WebUI.pages.LoginPage;
 import luongtd.common.BaseTest;
 import luongtd.constant.ConfigurationLogin;
 import org.testng.annotations.Test;
