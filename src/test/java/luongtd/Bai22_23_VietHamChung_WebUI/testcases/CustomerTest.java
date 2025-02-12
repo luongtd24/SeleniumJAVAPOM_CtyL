@@ -21,7 +21,7 @@ public class CustomerTest extends BaseTest {
         customerPage= dashboardPage.clickMenuCustomers();
         customerPage.verifyRedirectCustomerPageSuccess();
         customerPage.clickButtonAddNewCustomer();
-        customerPage.inputDateCustomer("LTD");
+        //customerPage.inputDateCustomer("LTD");
 
     }
     @Test

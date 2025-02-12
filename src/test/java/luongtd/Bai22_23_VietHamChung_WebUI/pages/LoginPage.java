@@ -57,9 +57,11 @@ public class LoginPage {
     public DashboardPage loginCRM(String email, String password){
        // driver.get(url);
         WebUI.openURL(url);
+        WebUI.waitForPageLoaded();
         setInputEmail(email);
         setInputPassword(password);
         clickButtonLogin();
+        WebUI.waitForPageLoaded();
     return new DashboardPage(driver);
     }
 

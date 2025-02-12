@@ -1,14 +1,13 @@
 package luongtd.Bai19_NavigationPage.pages;
 
 import luongtd.WebUI;
-import luongtd.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CustomerPage extends BaseTest {
+public class CustomerPage {
 
     private WebDriver driver;
 
@@ -64,7 +63,7 @@ public class CustomerPage extends BaseTest {
         WebUI.setText(inputWebsite, "http://lancsnet.com");
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputSearchGroups, "Silver");
-        sleep(1);
+        WebUI.sleep(1);
         driver.findElement(inputSearchGroups).sendKeys(Keys.ENTER);
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputAddress, "Me Linh");
@@ -80,7 +79,7 @@ public class CustomerPage extends BaseTest {
         String nameCompanySearch = "//a[normalize-space()='" + companySummary + "'][1]";
         driver.findElement(By.xpath(nameCompanySearch)).click();
         //return new ProfileCustomerPage(driver);
-        sleep(2);
+        WebUI.sleep(2);
         Assert.assertTrue(driver.findElement(inputCompany).isDisplayed(), "Da vao dung trang Company can tim");
         Assert.assertEquals(driver.findElement(inputCompany).getText(), "", "Khong vao dung trang Company can tim");
         return new ProfileCustomerPage(driver);

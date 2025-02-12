@@ -1,12 +1,11 @@
 package luongtd.Bai19_NavigationPage.pages;
 
 import luongtd.WebUI;
-import luongtd.common.BaseTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
-public class ProfileCustomerPage extends BaseTest {
+public class ProfileCustomerPage {
     private WebDriver driver;
     //private ProfileCustomerPage profileCustomerPage;
 

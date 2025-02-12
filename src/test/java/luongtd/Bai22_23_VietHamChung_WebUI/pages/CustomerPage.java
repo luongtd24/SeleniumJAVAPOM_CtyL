@@ -53,7 +53,8 @@ public class CustomerPage extends BaseTest {
 
     public void verifyRedirectCustomerPageSuccess() {
         Assert.assertTrue(driver.findElement(headerCustomer).isDisplayed(), "Da vao dusng trang Customer");
-        Assert.assertEquals(driver.findElement(headerCustomer).getText(), "Customers Summary", "Khong vao dung trang Customer");
+        Assert.assertEquals(WebUI.getElementText(headerCustomer), "Customers Summary", "Khong vao dung trang Customer");
+        WebUI.assertContains(WebUI.getElementText(headerCustomer),"Customers Summary", "Khong vao dung trang Customer");
     }
 
     public void inputDateCustomer(String companyName) {
@@ -64,7 +65,8 @@ public class CustomerPage extends BaseTest {
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputSearchGroups, "Silver");
         sleep(1);
-        driver.findElement(inputSearchGroups).sendKeys(Keys.ENTER);
+        //driver.findElement(inputSearchGroups).sendKeys(Keys.ENTER);
+        WebUI.setKey(inputSearchGroups, Keys.ENTER);
         WebUI.clickElement(dropdownGroups);
         WebUI.setText(inputAddress, "Me Linh");
         WebUI.setText(inputCity, "Ha Noi");
@@ -75,7 +77,8 @@ public class CustomerPage extends BaseTest {
 
     public ProfileCustomerPage searchInfoCompany(String companySummary) {
         WebUI.setText(searchCustomer, companySummary);
-        driver.findElement(searchCustomer).sendKeys(Keys.ENTER);
+        //driver.findElement(searchCustomer).sendKeys(Keys.ENTER);
+        WebUI.setKey(searchCustomer,Keys.ENTER);
         String nameCompanySearch = "//a[normalize-space()='" + companySummary + "'][1]";
         driver.findElement(By.xpath(nameCompanySearch)).click();
         //return new ProfileCustomerPage(driver);

@@ -22,6 +22,7 @@ public class DashboardPage {
 
 
     public CustomerPage clickMenuCustomers(){
+        WebUI.waitForPageLoaded();
         WebUI.clickElement(menuCustomers);
         System.out.println("click on menu Customers");
         return new CustomerPage(driver);
