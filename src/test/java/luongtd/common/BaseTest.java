@@ -1,11 +1,13 @@
 package luongtd.common;
 
+import luongtd.WebUI;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 import java.time.Duration;
 
@@ -20,18 +22,13 @@ public class BaseTest {
     }
 
     @BeforeMethod
+    @Parameters({"browser"})
     public  void createBrowser(){
-        //Tao Browser
-        driver = new ChromeDriver();
-        
-        //2 ham cho doi
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10)); //Ham cho tim kiem element trong 10s
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
-        // 2 ham de maximize/minimine trinh duyet
-        driver.manage().window().maximize();
+        setBrowser("chrome");
+        new WebUI(driver);
     }
 
-    public  void createBrowser(String browserName){
+    public  void setBrowser(String browserName){
 
         if (browserName.trim().toLowerCase().equals("chrome")){
             driver = new ChromeDriver();
