@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite" verbose="1" parallel="tests">
+    <test name="Demo Parallel01" parallel="methods">
+        <classes>
+            <class name="luongtd.Bai25_ParallelExcution_TestNG.DemoParallel01"></class>
+        </classes>
+    </test>
+
+    <test name="Demo Parallel02" parallel="methods">
+        <classes>
+            <class name="luongtd.Bai25_ParallelExcution_TestNG.DemoParallel01"></class>
+        </classes>
+    </test>
+
+</suite>
